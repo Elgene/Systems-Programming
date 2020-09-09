@@ -1,0 +1,71 @@
+Name:Elgene Menon Leo Anthony
+Student ID:300492604
+Username:leoanelge
+
+Assignment 3
+
+Task 1: CORE
+===============
+
+1) wait(NULL);
+
+2) In Linux, the return value for the fork system call is  PID of child for the 
+parent process, and 0 for the child process. 
+
+3)
+(a) New -valid
+(b) Running -valid
+(c) Sleeping- not valid
+(d) Waiting -valid
+
+4) The synchronous is a blocking scenario where given processA send data to processB 
+for processing and till the time processB return the result back , processA waits where
+it gets block till it recieved the data back and then it begins it execution.
+
+Whereas,Asynchronous is non-blocking scenario, after sending the message to processB for performing 
+some operations, processA continue the execution after some time the processB would 
+return the result , processA  fetches the result and continue it.
+
+5) int sockfd = socket(int domain,int type,int protocol);
+
+
+6)
+a)false 
+b)true   
+c)false
+d)true
+
+7 (c) bind, listen, accept, recv 
+
+Task 2: COMPLETION
+====================
+
+1)
+
+before fork
+pidA = 0, pidB = -1, var = 81
+pidA = 560, pidB = 560,var = 80
+
+
+2) It does not print HELLO at all because the current process replaced with "ls" command.
+
+
+3)(d) sendto - because this is used for UDP socket
+
+
+Task3:CHALLENGE 
+=================
+1(a) it prints 15 times 
+ 
+(b) refer to part1t3.pdf
+
+
+
+
+
+
+
+
+
+
+
