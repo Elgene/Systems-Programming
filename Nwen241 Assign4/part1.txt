@@ -1,0 +1,168 @@
+Name:Elgene Menon Leo Anthony
+Username:leoanelge
+Student Id:300492604
+
+Nwen Assignment 4
+===================
+================
+Task 1 : CORE
+================
+
+1)A constructor is called automatically whenever a new instance of a class or
+structure is created.If no user-declared constructors of any kind are provided for a class,
+the compiler will implicitly define a default constructor as an inline public member of 
+its class.An implicitly defined default constructor expects no parameters and has an
+empty body.Default constructor is not automatically provided, if class definition includes
+any constructor.
+
+2) A class that contains at least one pure virtual function member.
+A pure virtual function (or abstract function) in C++ is a virtual function for 
+which we don’t have implementation, we only declare it. A pure virtual function is declared 
+by assigning 0 in declaration and its implementation must be done in a sub class such as abstract 
+class cannot be instantiated and an abstract class can have constructors
+
+
+3) Assuming that it has it's own implementation
+a)valid
+b)valid          
+c)valid     
+d)valid
+e)invalid
+f)invalid
+g)valid
+h)valid
+i)valid 
+j)valid 
+
+4)
+ #include<iostream>
+ int i = 2; 
+ char str[] = "foo";
+int main()
+{
+ std::cout<<"str["<<i<<"]"<<" = " << str[i];
+ return 0;
+}
+
+
+
+5)
+ #include <iostream>
+ 
+ class rational {
+    public:
+        float getFloat(){
+         return ((float)numerator/(float)denominator);                       
+          }         
+   rational(int num, int deno): numerator(num), denominator(deno){}
+    private:
+        int numerator;
+        int denominator;
+    };
+    int main(){
+		rational r (5,2);
+		float m = r.getFloat(); 
+		 std::cout<<" float number =" << m;
+		return 0;		
+	}
+
+=====================
+Task2:COMPLETION
+=====================
+
+1)The difference are function-like macro, the preprocessor directors process even before
+the compiler process start, whereas for inline function, it is not a preprocessor director
+but rather it is a request to a compiler.This means, it is process with the compiler
+
+function-like macro, is a text replacement which means it cannot access the members, whereas
+the inline function, can access the member and not all inline requests are granted by the 
+compiler such as function contains a loop (for, while, do-while),function contains static
+ variables,function is recursive,function return type is other than void, and the return
+ statement doesn’t exist in function body and function contains switch or goto statement
+
+2
+a)false 
+b)true
+c)false     
+d)false 
+      
+3a)
+
+#include <iostream>
+ 
+namespace foo {    
+        int a = 50;
+        void increment() {
+            a++;
+          
+         }
+        }
+   using namespace foo;
+   
+    int main() {
+        std::cout << a <<;
+        return 0;
+    }
+
+
+b)
+
+#include <iostream>
+                  
+namespace foo {
+        int a = 50;
+        void increment() {
+            a++;  
+          std::cout << a <<;   
+         }
+  }
+
+  using foo::increment;
+   
+  int main() {           
+        increment();
+        return 0;
+  }
+
+==============================
+Task3:CHALLENGE
+==============================
+
+1)
+
+#include <iostream>
+
+namespace foo { 
+class Rectangle {
+ public: 
+         virtual int getHeight() const = 0; 
+         virtual int getWidth() const = 0; 
+         virtual int area() const = 0;
+         
+ protected: 
+            int height; 
+            int width; 
+}; 
+}
+
+using namespace foo;
+
+namespace bar{
+
+class Square: public Rectangle {
+public: 
+    //inline constructor
+    inline Square(int s):height(s),width(s){} 
+
+  //implicit inline function definitions that overrides the base class functions
+  //Note that We can also explicitly declare those three functions using the key word inline 
+  //e.g inline virtual int getHeight() const;
+
+      
+    virtual int getHeight() const; 
+    virtual int getWidth() const; 
+    virtual int area() const;
+
+};
+}
+
